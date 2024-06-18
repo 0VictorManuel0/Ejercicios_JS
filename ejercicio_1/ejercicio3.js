@@ -15,11 +15,14 @@ var people = [
         age: 55 
     }
 ];
-console.log(people);
 
-for (let i = 0; i < people.length; i++) {
-    const element = people[i];
-    if (element.age<35) {
-        console.log(element.name);
+edadMenor35(people);
+
+function edadMenor35(params) {
+    for (let i = 0; i < params.length; i++) {
+        const element = params[i];
+        if (element.age<35) {
+            console.log(element.name);
+        }
     }
 }

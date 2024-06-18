@@ -4,13 +4,17 @@ let people = [
     { name: "alex", id : 3 }, 
     { name: "john", id : 3 }
 ];
+numVecesNombre(people)
 
-
-for (let i = 0; i < people.length; i++) {
-    const element = people[i];
-    console.log(element);
-    console.log(element.name);
-    if (element.name === ) {
-        
+function numVecesNombre(params) {
+    let nombresRepetidos=[];
+    for (let i = 0; i < params.length; i++) {
+        const element = params[i];
+        nombresRepetidos.push(element.name);
     }
+    let result={};
+    nombresRepetidos.forEach((value)=>{
+        result[value]=(result[value]||0)+1;
+    });
+    console.log(result);
 }
