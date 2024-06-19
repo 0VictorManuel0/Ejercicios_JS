@@ -6,7 +6,23 @@
     <title>Document</title>
 </head>
 <body>
-
-    <script src="ejercicio7.js"></script>
+    <ul>
+        <li onclick="data()" id="C1" data-id="US" data-dial-code="1">USA</li>
+        <li onclick="data()" id="C2" data-id="CA" data-dial-code="1">Canada</li>
+        <li onclick="data()" id="C3" data-id="FF" data-dial-code="3">France</li>
+    </ul>
+    <!-- <script src="ejercicio8.js"></script> -->
+    <script>
+        function data() {
+            let li = document.querySelectorAll('li');
+            console.log(li);
+            for (let i = 0; i < li.length; i++) {
+                let arrayAux = [];
+                arrayAux.push(li[i]);
+                console.log(arrayAux);
+                l
+            }
+        }
+    </script>
 </body>
 </html>
