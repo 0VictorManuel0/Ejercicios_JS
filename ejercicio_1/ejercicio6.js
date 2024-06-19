@@ -5,8 +5,5 @@ var object={
     key4:20
 }
 console.log(object);
-let items={};
-for (let i = 0; i < object.length; i++) {
-    const element = array[i];
-    console.log(element);
-}
+let acomodo = Object.values(object).sort((a,b)=>a-b);
+console.log(acomodo);
