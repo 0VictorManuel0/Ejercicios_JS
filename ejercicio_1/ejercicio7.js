@@ -23,41 +23,42 @@ var personArr=[
         "city": "Perth",
         "phoneNo":"1234567890"
     }
+    
 ];
-init(personArr);
-function init(personArr) {
-    let contenedor = document.querySelector("body");
-    console.log(contenedor);
-    let tabla = document.createElement("table");
-    console.log(personArr.length);
-    for (let i = 0; i < personArr.length; i++) {
-        let aux=[];
-        aux.push(personArr[i]);
-        console.log(aux);
+
+
+init(personArr); //llamar la funcion
+
+
+function init(personArr) { //pasarle los argumentos a la funcion
+    let contenedor = document.querySelector("body"); //se guarda la tag del body en una etiqueta
+    let tabla = document.createElement("table");//se guarda la tag tabla que se creara en una variable
+    for (let i = 0; i < personArr.length; i++) {// se recorre el array de personas
+        
         let tr = document.createElement("tr");
         let th = document.createElement("th");
-        let thText = document.createTextNode(`persona${[i+1]}`);
+        let thText = document.createTextNode(`persona${[i+1]}`);// se crea el titulo de persona 
         
         th.appendChild(thText);
         tr.appendChild(th);
 
         td = document.createElement("td")
-        tdText = document.createTextNode(`${personArr[i].name}`);
+        tdText = document.createTextNode(`${personArr[i].name}`); // se le asigna a una columna los nombres de las personas
         td.appendChild(tdText);
         tr.appendChild(td);
 
         td = document.createElement("td")
-        tdText = document.createTextNode(`${personArr[i].personId}`);
+        tdText = document.createTextNode(`${personArr[i].personId}`);// se le asigna a una columna el id de las personas
         td.appendChild(tdText);
         tr.appendChild(td);
 
         td = document.createElement("td")
-        tdText = document.createTextNode(`${personArr[i].city}`);
+        tdText = document.createTextNode(`${personArr[i].city}`);// se le asigna a una columna las ciudades de las personas
         td.appendChild(tdText);
         tr.appendChild(td);
 
         td = document.createElement("td")
-        tdText = document.createTextNode(`${personArr[i].phoneNo}`);
+        tdText = document.createTextNode(`${personArr[i].phoneNo}`);// se le asigna a una columna los n° de telefono de las personas
         td.appendChild(tdText);
         tr.appendChild(td);
 
