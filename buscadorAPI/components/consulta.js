@@ -29,7 +29,15 @@ export default class ConsultaComponent extends HTMLElement{
                         let idLocation = element.stations[0].id;
                         let nameLocation = element.stations[0].name;
                         
-                        
+                        let tabla = document.createElement('table');
+                        let tr = document.createElement('tr');
+                        let th = document.createElement('th');
+                        let td = document.createElement('td');
+                        td.innerHTML = `<li>${latitud}</li>
+                                        <li>${longitud}</li>
+                                        <li>${idLocation}</li>
+                                        <li>${nameLocation}</li>`;
+                        form.appendChild(td);
                     });
                 });
             }
