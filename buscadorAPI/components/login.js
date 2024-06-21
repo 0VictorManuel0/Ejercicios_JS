@@ -13,10 +13,44 @@ export default class LoginComponent extends HTMLElement{
     render() {
         this.shadowRoot.innerHTML=
         `
-            <h2>Inicio de sesion</h2>
-            <input id="userName" type="text" placeholder="Usuario">
-            <input id="userPass" type="password" placeholder="Contraseña">
-            <button id="btnEntrar">Entrar</button>
+            <style>
+                .login-container{
+                    display:flex;
+                    width:100%;
+                    height: 100%;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    align-items: center;
+                }
+                #btnEntrar{
+                    border: 0;
+                    width: 40%;
+                    height: 5vh;
+                    background-color: #3498DB;
+                    color: white;
+                }
+                #userName, #userPass{
+                    width: 100%;
+                    height: 5vh;
+                    border: 1px solid #85C1E9;
+                }
+                .input-label{
+                    display:flex;
+                    flex-direction:column;
+                    width:60%;
+                }
+            </style>
+            <div class="login-container">
+                <div class="input-label">
+                    <label>Email</label>
+                    <input id="userName" type="text">
+                </div>
+                <div class="input-label">
+                    <label>Password</label>
+                    <input id="userPass" type="password">
+                </div>
+                <button id="btnEntrar">Sign</button>
+            </div>
         `;
     }
 
@@ -26,12 +60,9 @@ export default class LoginComponent extends HTMLElement{
         let userPass = document.querySelector('vistas-component').shadowRoot.querySelector('login-component').shadowRoot.getElementById('userPass');
         let loginModule = document.querySelector('vistas-component').shadowRoot.getElementById('login-c');
         let consultaModule = document.querySelector('vistas-component').shadowRoot.getElementById('consulta-c');
-        console.log(entrarSecion);
         entrarSecion.addEventListener('click', (e)=>{
             console.log(userName.value, userPass.value);
-            console.log('click');
             if (userName.value === 'pedro' && userPass.value == '123') {
-                console.log('entraste');
                 loginModule.classList.remove("hidden");
                 consultaModule.classList.add('hidden');
             }else{
