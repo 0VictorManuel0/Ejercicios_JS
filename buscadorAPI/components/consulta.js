@@ -17,15 +17,20 @@ export default class ConsultaComponent extends HTMLElement{
     }
 
     formList(){
-        let arraysLoca=[];
+        let results=[];
         fetch('https://api.datos.gob.mx/v1/calidadAire').then(response=>{
             let form = document.querySelector('vistas-component').shadowRoot.querySelector('consulta-component').shadowRoot.getElementById('form');
             if (response.ok) {
                 response.json().then(data=>{
-                    console.log(data);
-                    let results = data.results;
-                    arraysLoca.push(results);
-                    
+                    results = data.results;
+                    results.map((element)=>{
+                        let latitud = element.stations[0].location.lat;
+                        let longitud = element.stations[0].location.lon;
+                        let idLocation = element.stations[0].id;
+                        let nameLocation = element.stations[0].name;
+                        
+                        
+                    });
                 });
             }
         });

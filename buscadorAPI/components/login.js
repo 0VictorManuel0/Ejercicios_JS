@@ -55,9 +55,10 @@ export default class LoginComponent extends HTMLElement{
     }
 
     validacion(e){
-        let entrarSecion = document.querySelector('vistas-component').shadowRoot.querySelector('login-component').shadowRoot.getElementById('btnEntrar');
-        let userName = document.querySelector('vistas-component').shadowRoot.querySelector('login-component').shadowRoot.getElementById('userName');
-        let userPass = document.querySelector('vistas-component').shadowRoot.querySelector('login-component').shadowRoot.getElementById('userPass');
+        let entrarSecion = this.shadowRoot.getElementById('btnEntrar');
+        let userName = this.shadowRoot.getElementById('userName');
+        let userPass = this.shadowRoot.getElementById('userPass');
+        
         let loginModule = document.querySelector('vistas-component').shadowRoot.getElementById('login-c');
         let consultaModule = document.querySelector('vistas-component').shadowRoot.getElementById('consulta-c');
         entrarSecion.addEventListener('click', (e)=>{

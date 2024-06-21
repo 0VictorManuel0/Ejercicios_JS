@@ -38,7 +38,7 @@ export default class VistasComponents extends HTMLElement{
                     
                     .consulta-comp{
                         border:1px solid #3498DB;
-                        display: flex;
+                        display: none;
                         width: 100%;
                         height: 99%;
                         consulta-component{
@@ -51,7 +51,7 @@ export default class VistasComponents extends HTMLElement{
                     }
                 </style>
                 <div class="vistas-container">
-                    <div id="login-c" class="login-comp ">
+                    <div id="login-c" class="login-comp hidden">
                         <login-component></login-component>
                     </div>
                     <div id="consulta-c" class="consulta-comp">
