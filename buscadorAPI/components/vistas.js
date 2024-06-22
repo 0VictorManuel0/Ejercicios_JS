@@ -52,10 +52,10 @@ export default class VistasComponents extends HTMLElement{
                     }
                 </style>
                 <div class="vistas-container">
-                    <div id="login-c" class="login-comp hidden">
+                    <div id="login-c" class="login-comp">
                         <login-component></login-component>
                     </div>
-                    <div id="consulta-c" class="consulta-comp">
+                    <div id="consulta-c" class="consulta-comp hidden">
                         <consulta-component></consulta-component>
                     </div>
                 </div>
