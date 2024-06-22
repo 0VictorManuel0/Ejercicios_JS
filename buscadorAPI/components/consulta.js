@@ -12,14 +12,43 @@ export default class ConsultaComponent extends HTMLElement{
     render() {
         this.shadowRoot.innerHTML=
                     `
-                        <div id="form"></div>
+                        <style>
+                            #idform{
+                                width: 100%;
+                                height: 100%;
+                                word-break: break-all;
+                            }
+                            .table{
+                                width: 90%;
+                                height: 90%;
+                                tr{
+                                    th{
+                                        width: 33%;
+                                        border: 1px solid blueviolet;
+                                    }
+                                    td{
+                                        height: 5vh;
+                                        border: 1px solid blueviolet;
+                                    }
+                                }
+                            }
+                        </style>
+                        <div id="form">
+                            <table class="table">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>NAME</th>
+                                    <th>LOCATION</th>
+                                </tr>
+                            </table>
+                        </div>
                     `;
     }
 
     formList(){
         let results=[];
         fetch('https://api.datos.gob.mx/v1/calidadAire').then(response=>{
-            let form = document.querySelector('vistas-component').shadowRoot.querySelector('consulta-component').shadowRoot.getElementById('form');
+            let contentApi = this.shadowRoot.querySelector('tbody');
             if (response.ok) {
                 response.json().then(data=>{
                     results = data.results;
@@ -28,16 +57,13 @@ export default class ConsultaComponent extends HTMLElement{
                         let longitud = element.stations[0].location.lon;
                         let idLocation = element.stations[0].id;
                         let nameLocation = element.stations[0].name;
-                        
-                        let tabla = document.createElement('table');
                         let tr = document.createElement('tr');
-                        let th = document.createElement('th');
-                        let td = document.createElement('td');
-                        td.innerHTML = `<li>${latitud}</li>
-                                        <li>${longitud}</li>
-                                        <li>${idLocation}</li>
-                                        <li>${nameLocation}</li>`;
-                        form.appendChild(td);
+                        tr.innerHTML = `    
+                                            <td> ${idLocation}</td>  
+                                            <td> ${nameLocation}</td>
+                                            <td> ${latitud} ${longitud}</td>
+                                        `;
+                        contentApi.appendChild(tr);
                     });
                 });
             }

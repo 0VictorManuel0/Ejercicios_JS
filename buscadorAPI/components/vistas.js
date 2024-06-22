@@ -44,6 +44,7 @@ export default class VistasComponents extends HTMLElement{
                         consulta-component{
                             width:100%;
                             height:100%;
+                            word-break: break-all;
                         }
                     }
                     .hidden{
