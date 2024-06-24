@@ -1,5 +1,5 @@
 import LoginComponent from "./login.js";
-import ConsultaComponent from "./consulta.js";
+import ConsultaComponent from "./test.js";
 
 export default class VistasComponents extends HTMLElement{
 

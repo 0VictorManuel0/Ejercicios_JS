@@ -1,8 +1,8 @@
 export default class ConsultaComponent extends HTMLElement{
     constructor(){
         super();
-        let results=[];
         this.attachShadow({mode:'open'});
+        this.url = [];
     }
 
     connectedCallback() {
@@ -76,8 +76,8 @@ export default class ConsultaComponent extends HTMLElement{
                             </div>
                             <div class="filter">
                                 <label>Filter: </label>
-                                <input type:"text">
-                                <button>Search</button>
+                                <input id="filter" type:"text">
+                                <button id="search">Search</button>
                                 <button>Clear</button>
                             </div>
                             <div class="header-tbl">
@@ -87,9 +87,6 @@ export default class ConsultaComponent extends HTMLElement{
                             </div>
                             <div id="form">
                                 <table class="table">
-                                    <tr>
-                                        
-                                    </tr>
                                 </table>
                             </div>
                         </div>
@@ -97,8 +94,8 @@ export default class ConsultaComponent extends HTMLElement{
     }
 
     formList(){
-        fetch('https://api.datos.gob.mx/v1/calidadAire').then(response=>{
-            let contentApi = this.shadowRoot.querySelector('tbody');
+        url = fetch('https://api.datos.gob.mx/v1/calidadAire').then(response=>{
+            let contentApi = this.shadowRoot.querySelector('table');
             if (response.ok) {
                 response.json().then(data=>{
                     this.results = data.results;
@@ -112,13 +109,12 @@ export default class ConsultaComponent extends HTMLElement{
                                             `;
                             contentApi.appendChild(tr);
                         });
-                        
                     });
                 });
             }
         });
     }
-
+    
     scrollInfinite(){
         const div = this.shadowRoot.getElementById('form');
         div.addEventListener("scroll", () => {

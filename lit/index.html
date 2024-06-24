@@ -4,8 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        host-element{
+            display: inline-block;
+            background-color: coral;
+        }
+        p{
+            font-family: sans-serif;
+        }
+    </style>
 </head>
 <body>
+
+    <my-element></my-element>
+
     <lit-template></lit-template>
     <ul>
         <li><e-conect email="some_email@email.com" name="Juan Perez"></e-conect></li>
@@ -16,10 +28,37 @@
 
     <template-binding></template-binding>
 
+    <color-list></color-list>
     
-    <script type="module" src="./src/lit-template.js"></script>
-    <script type="module" src="./src/e-conect.js"></script>
-    <script type="module" src="./src/contact-list.js"></script>
-    <script type="module" src="./src/template-blind.js"></script>
+    <sample-input></sample-input>
+
+    <herencia-element></herencia-element>
+    <h2>Compartir estilos</h2>
+    <sharing-styles></sharing-styles>
+    <p>------------</p>
+
+    <shadow-tree></shadow-tree>
+
+    <div>
+        <p>--------</p>
+        <h2>Estilos elemento host</h2>
+        <host-element></host-element>
+        <host-element hidden></host-element>
+        <host-element class="blue"></host-element>
+        <p>parrafo</p>
+        <p>--------</p>
+    </div>
+
+    <script type="module" src="./src/host-element/hostelement.js"></script>
+    <script type="module" src="./src/shadow-tree-style/shadow-tree.js"></script>
+    <script type="module" src="./src/inputexample/input.js"></script>
+    <script type="module" src="./src/binding/my-element.js"></script>
+    <script type="module" src="./src/binding/lit-template.js"></script>
+    <script type="module" src="./src/contacts/e-conect.js"></script>
+    <script type="module" src="./src/contacts/contact-list.js"></script>
+    <script type="module" src="./src/binding/template-blind.js"></script>
+    <script type="module" src="./src/color/color-list.js"></script>
+    <script type="module" src="./src/stylesherencia/herencia-elemento.js"></script>
+    <script type="module" src="./src/sharingstyle/sharing-styles.js"></script>
 </body>
 </html>
