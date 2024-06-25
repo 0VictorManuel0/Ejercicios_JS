@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>LITSTYLES</title>
     <style>
         host-element{
             display: inline-block;
@@ -12,6 +12,8 @@
         p{
             font-family: sans-serif;
         }
+        slots-element div{border-style: dotted;}
+        html{--themeColor: #123456;}
     </style>
 </head>
 <body>
@@ -49,6 +51,43 @@
         <p>--------</p>
     </div>
 
+    <div>
+        <h2>Estilos en slots</h2>
+        <slots-element>
+            <p>Slotted content</p>
+            <span slot="hi">slotted span inside a div</span>
+        </slots-element>
+        <p>--------</p>
+    </div>
+
+    <div>
+        <p>Cambiando fuera del shadow tree</p>
+        <slots-element>
+            <div>Stylish with ::slotted()</div>
+        </slots-element>
+        <slots-element
+            <div><p>Not styble with ::slotted()</p></div>
+        </slots-element>
+    </div>
+
+    <div>
+        <h2>Estilos configurables</h2>
+        <config-style></config-style>
+        <p>-------------</p>
+    </div>
+
+    <div>
+        <h2>Dinamic Styles</h2>
+        <dinamic-styles></dinamic-styles>
+        <p>----------------</p>
+    </div>
+
+    <div><a href="index2.html">theme-element</a></div>
+
+
+    <script type="module" src="./src/class-style-template/class-style-map.js"></script>
+    <script type="module" src="./src/configstyle/config-style.js"></script>
+    <script type="module" src="./src/slotstyle/slots-styles.js"></script>
     <script type="module" src="./src/host-element/hostelement.js"></script>
     <script type="module" src="./src/shadow-tree-style/shadow-tree.js"></script>
     <script type="module" src="./src/inputexample/input.js"></script>
