@@ -2,3 +2,5 @@
 /lit/node_modules
 lit/package-lock.json
 lit/package.json
+/lit-properties/node_modules
+lit-properties/package-lock.json
