@@ -5,3 +5,5 @@ lit/package.json
 /lit-properties/node_modules
 lit-properties/package-lock.json
 .DS_Store
+/lit-app/node_modules
+lit-app/package-lock.json
